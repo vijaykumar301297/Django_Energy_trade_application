@@ -1,0 +1,26 @@
+{% load static %}
+
+<div class="container">
+        <div class="sidebarContent">
+            <div class="imgSection">
+                <a href="{%  url 'home/' %}"><img class = "logo" src="{% static 'img/nusLogo.svg' %}" alt="NUS Consulting Logo"></a>
+            </div>
+            <div class="sectionLinks">
+                <ul class="list">
+
+                    <li class="item"><a href="" class="home nav-link" >Home</a></li>
+                    <li class="item {% if navbar == 'parent' %} active {% endif %}"><a href="{%  url 'createcompany/parent' %}" class="company" >Add Company</a></li>
+                    <li class="item"><a href="" class="contract nav-link" >Supply Contract</a></li>
+                    <li class="item"><a href="" class="trade nav-link" >Enter Trade</a></li>
+                    <li class="item"><a href="" class="report nav-link" >Generate Report</a></li>
+                    <li class="item {% if navbar == 'admin' %} active {% endif %}"><a href="{%  url 'usermanagement/admin' %}" class="userData nav-link">User Management</a></li>
+                </ul>
+            </div>
+
+            <div class="logOut">
+                <a href="{% url 'logout' %}" class="logoutBtn">&nbsp Logout</a>
+            </div>
+        </div>
+    </div>
+
+

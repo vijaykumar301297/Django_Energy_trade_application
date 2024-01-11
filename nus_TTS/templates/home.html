@@ -1,0 +1,23 @@
+
+{% extends 'index.html' %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="contentData">
+    <div class="contents">
+        <span class="user">
+            {% if user.is_authenticated %}
+            <strong><h1>Welcome, {{user.username}},</h1></strong>
+            {% endif %}</span>
+        <p class="para">
+            NUS Consulting Group's TTS (Trade Tracking System)<br>
+            portal which will allow you to access, view, and generate <br>
+            position reports relating to your energy supply contracts
+        </p>
+        <p class="returnHome">
+            <strong>To return to this Home screen at any time <br>simply click on the NUS Consulting Group logo.</strong>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

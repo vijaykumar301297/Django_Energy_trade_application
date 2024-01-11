@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NUS FRS TTS SYSTEM | Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="icon" href="{% static 'img/logo.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer ></script>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <a href=""><img class = "logo" src="{% static 'img/nusLogo.svg' %}" alt="NUS Consulting Logo"></a>
+        </div>
+        <div class="content">
+
+            <section class="contentLeft">
+                <p class="signinContent">
+                    Welcome to <br>NUS Consulting Group’s <br>
+                    <strong>
+                         Trade Tracking System (TTS)
+                    </strong>
+                    designed to provide dynamic position reports for flexible energy supply contracts.
+                </p>
+            </section>
+
+            <section class="contentRight">
+
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="message">
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                    <div class="inputHeading">
+                        <h5 class="heading">Enter Your Credential</h5>
+                    </div>
+
+                    <div class="inputSection">
+                       <div class="mailSection">
+                           <input type="text" id="username" name ="username" autocomplete="off" required>
+                           <label for="username">Username</label>
+                       </div>
+
+                    </div>
+                    <div class="inputSection">
+                       <div class="mailSection">
+                           <input type="password" id="password" name ="password" autocomplete="off" required >
+                           <label for="password">Password</label>
+                           <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+                       </div>
+                    </div>
+                     <div class="btn">
+                        <div class="forgot">
+                             <a href="{%  url 'reset_password' %}">Forgot Password?</a>
+                        </div>
+                        <div class="login">
+                            <button type="submit" class="loginBtn">Sign In</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <footer class="footerSection">
+            <ul>
+                <li><a href="">NUS Consulting Group</a></li>
+                <li><a href="">Terms And Condition</a></li>
+                <li><a href="">Privacy</a></li>
+            </ul>
+            <a href="https://qualesce.com/" class="qsite"><img src="{% static 'img/poweredby_center.svg' %}" alt=""></a>
+        </footer>
+    </div>
+</body>
+
+
+</html>

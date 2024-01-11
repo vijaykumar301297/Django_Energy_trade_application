@@ -1,0 +1,62 @@
+{% load static %}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.content {
+
+    height: 20vh;
+    margin-left: 20%;
+
+}
+.user_block{
+    width:85%;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+.btn_block {
+    position: absolute;
+    right: 3%;
+    top: 5%;
+}
+
+.btn_add {
+    font-size:16px;
+    padding: 10px 20px;
+    background-color:#1A73E8;
+    color: white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.fas {
+    font-size:12px;
+    color:white;
+    margin-top:1px;
+ }
+
+.nav_bar {
+   position: absolute;
+  top: 10%;
+
+}
+.nav_list {
+     display:flex;
+     list-style:none;
+ }
+
+ .nav_items {
+    padding:10px 20px;
+ }
+
+ .act {
+    background-color: #E0E8F3;
+    color:black !important;
+    border-bottom:3px solid black;
+}

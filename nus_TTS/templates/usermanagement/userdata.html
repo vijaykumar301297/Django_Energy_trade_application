@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>NUS FRS TTS SYSTEM | Add user</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="icon" href="{% static 'img/logo.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+   <script src="{% static 'js/active.js' %}" defer ></script>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="primary_heading--block">
+                <h2 class="primary_heading">
+                    <span class="primary_heading--main">
+                        Add User
+                    </span>
+                    <span class="close" onclick='window.history.go(-1);' >&times;</span>
+                </h2>
+            </div>
+
+            <form id="regForm" method="post" action="" >
+                {% csrf_token %}
+                <hr>
+                <div class="tab">
+                       {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                    <div class="input_text--block">
+                        <label class="username">Username</label>
+                        <input type="text" class="input_user" name ="username">
+                    </div>
+
+
+                    <div class="input_text--block">
+                        <label class="email">Email</label>
+                        <input type="email" class="input_email" name ="email">
+                    </div>
+                    <div class="select--block">
+                        <label class="role">Role</label>
+                        <select id="role" name="role">
+                            <option value="Select" disabled>Select Role</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Manager">Manager</option>
+                            <option value="User">User</option>
+                            <option value="Parent" class="parent_company">Parent User</option>
+                            <option value="Client" class="client_company">Client User</option>
+                        </select>
+                    </div>
+                    <div class="select_parent--block" style="display: none;">
+                        <label class="email">Parent Company</label>
+                        <select id="" name="parent_role">
+                            <option value="C">Select Parent</option>
+                            {data}
+                             {% for i in data %}
+                            <option value="{{i.parent}}" >
+                                {{i.parent}}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="select_client--block" style="display: none;">
+                        <div class="parent">
+                            <label class="email">Parent Company</label>
+                            <select id="" name="parent_role">
+                               {% for i in data %}
+                            <option value="{{i.parent}}" >
+                                {{i.parent}}
+                            </option>
+                            {% endfor %}
+                            </select>
+                        </div>
+                        <div class="client">
+                            <label class="email">Client Company</label>
+                            <select id="" name = "client_role">
+                                <option value="B">Select Client</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input_text--block">
+                        <label class="username">Password</label>
+                        <input type="password" class="input_user" name ="password" autocomplete="off" required>
+<!--                        <input type="password" id="input_user" name ="password" autocomplete="off" required >-->
+
+                    </div>
+                </div>
+                <hr>
+                <div class="btn--block">
+                    <a href="" class="btn btn_cancel" onclick='window.history.go(-1);'>Cancel</a>
+                    <button type="submit" class="btn btn_create">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script>
+    const roleValue = document.querySelector('#role');
+    console.log(roleValue);
+    roleValue.addEventListener('change', function(e) {
+        if(e.target.value ==='Parent') {
+            document.querySelector('.select_parent--block').style.display='block';
+            document.querySelector('.select_client--block').style.display='none';
+        }
+       else if(e.target.value==='Client') {
+            document.querySelector('.select_client--block').style.display='block';
+             document.querySelector('.select_parent--block').style.display='none';
+       }
+       else {
+        document.querySelector('.select_client--block').style.display='none';
+        document.querySelector('.select_parent--block').style.display='none';
+       }
+    });
+</script>
+</html>

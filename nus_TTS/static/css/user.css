@@ -1,0 +1,157 @@
+{% load static %}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+    padding: 3rem;
+}
+
+.container {
+    position: relative;
+    background-color: #F9FBFD;
+}
+
+.wrapper {
+    position: absolute;
+    left: 50%;
+    width: 30%;
+    padding: 4rem 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transform: translate(-50%,0);
+}
+
+.wrapper1 {
+    position: absolute;
+    left: 50%;
+    left:50%;
+    width: 30%;
+    padding: 4rem 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transform: translate(-50%,25%);
+}
+
+.primary_heading--block {
+    display: block;
+    color: #345DA6;
+    width: 80%;
+    margin: 0 auto 5rem auto;
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.primary_heading--main {
+    float: left;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+
+.heading_secondary--block {
+    display: block;
+    color: #345DA6;
+    margin: 1rem 0.5rem;
+}
+
+.secondary_heading--main {
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.tab {
+    width: 100%;
+    margin: 0 5px;
+}
+
+.input_text--block, .select--block,
+.select_parent--block, .select_client--block {
+    color: #345DA6;
+    margin: 1rem 0.5rem;
+}
+
+.username, .email, label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    /* text-transform: uppercase; */
+
+    /* letter-spacing: 1px; */
+    display: block;
+    margin-bottom: 1rem;
+}
+
+
+
+.input_user, .input_email, select {
+    width: 95%;
+    padding: 10px 0 10px 10px;
+    background-color: #F9FBFD;
+    border: none;
+    border: 1px solid #1363F1;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    color: #345DA6;
+}
+
+.btn--block {
+    margin:2rem 0;
+}
+
+.btn {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    border: none;
+    border: 1px solid #1363F1;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn_cancel {
+    float: left;
+    background-color: #fff;
+    color: #345DA6;
+}
+
+.btn_create{
+    float: right;
+    color: White;
+    background-color: #1363F1;
+    padding: 1.3rem 2rem !important;
+}
+
+.messages{
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    list-style: none;
+}
+
+.messages1 {
+    font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  list-style: none;
+  color: red;
+  text-align: center
+}

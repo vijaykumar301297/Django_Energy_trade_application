@@ -1,0 +1,293 @@
+{% load static %}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+     background-image: url( '../img/OfficeReception1.png');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+     height:100vh;
+}
+
+.wrapper {
+    margin:0 auto;
+    display:block;
+}
+
+.logo {
+    position: absolute;
+    width:15%;
+    top:5%;
+    left:5%;
+}
+
+.content {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    display: flex;
+    width: 690px;
+    height: 250px;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border-radius:15px;
+}
+
+.contentLeft {
+    width:288px;
+    text-align: center;
+}
+
+.contentRight {
+    width:250px;
+    display: flex;
+    justify-content: center;
+    border-left: 1px solid black;
+}
+
+form {
+    margin-left:30px;
+}
+
+h5 {
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+
+.mailSection{
+  position: relative;
+  margin-bottom: 15px;
+
+
+}
+.mailSection input{
+  display: block;
+  width: 200px;
+  height: 40px;
+  background: #fff;
+  border: solid 1px white;
+  transition: all .3s ease;
+  padding: 0 15px
+}
+
+p label {
+
+}
+
+#id_email {
+  display: block;
+  width: 200px;
+  height: 40px;
+  background: #fff;
+  border: solid 1px white;
+  transition: all .3s ease;
+  padding: 0 15px
+}
+}
+.mailSection input:focus{
+  border-color: 1px solid #1363F1;
+}
+.mailSection label{
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 12px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #fff;
+  padding: 0 10px;
+  color: #999;
+  transition: all .3s ease
+}
+.mailSection input:focus + label,
+.mailSection input:valid + label{
+  font-size: 11px;
+  top: -11px;
+}
+.mailSection input:focus + label{
+  color: #1363F1;
+  border-color: 1px solid #1363F1;
+}
+
+.btn {
+    display:inline;
+}
+
+.forgot {
+    font-size:12px;
+   /* position:absolute;
+    right:9%;
+    bottom:28%;*/
+    float:right;
+    text-decoration:underline;
+    margin-bottom:10px;
+}
+
+.login {
+  margin: 40px 80px;
+  display: flex;
+  justify-content: space-between;
+  font-size:12px;
+}
+
+.loginBtn {
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  width: 100px;
+  cursor: pointer;
+  background: #1a73e8;
+  border: 1px solid #1a73e8;
+  color:white;
+  position: absolute;
+  right: 18%;
+}
+
+.resetbtn {
+    padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  width: 198px;
+  cursor: pointer;
+  background: #1a73e8;
+  border: 1px solid #1a73e8;
+  color: white;
+  position: absolute;
+  right: 9%;
+}
+
+.resetlink {
+    text-align: center;
+  width: 100%;
+  color: whit
+}
+
+.fa-eye{
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  cursor: pointer;
+  color: lightgray;
+  transform: translateY(-8px);
+}
+
+.footerSection {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 50px;
+    bottom: 0;
+    text-align:center;
+    align-items: center;
+    background: white;
+}
+
+
+.footerSection, ul, li, a {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    gap: 20px;
+    text-decoration: none;
+   /* gap:10px;*/
+}
+
+
+footer ul li:last-of-type {
+    border-right: none;
+}
+
+.qsite {
+    position: fixed;
+    right: 2%;
+    /* bottom: 11px; */
+    bottom: 10px;
+}
+
+.signinBtn {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    margin-top:50px;
+    font-size:14px;
+    align-items:center;
+}
+
+.signinBtn a {
+    margin-left:-10px;
+    text-decoration:underline;
+    color:#1a73e8;
+    font-size:16px;
+    font-weight:700;
+}
+
+.resetBtn {
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  width: 150px;
+  cursor: pointer;
+  background: #1a73e8;
+  border: 1px solid #1a73e8;
+  color:white;
+  /*position: absolute;*/
+}
+
+.reset_btn {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.reset_btn > button {
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    width: 200px;
+    cursor: pointer;
+    background: #1a73e8;
+    border: 1px solid #1a73e8;
+    color: white;
+}
+
+
+
+@media screen and (min-width:370) {
+    .container{
+         background-image: url( '../img/OfficeReception1.png') !important;
+        background-repeat: no-repeat;
+        background-size:cover !important;
+        background-position: center;
+        overflow: hidden;
+        font-size:12px;
+         width:20%;
+         height:80vh;
+         overflow:hidden !important;
+    }
+}
+@media screen and (min-width:900) {
+    .container{
+         background-image: url( '../img/OfficeReception1.png');
+        background-repeat: no-repeat;
+        background-size:cover !important;
+        background-position: center;
+        overflow: hidden;
+        font-size:12px;
+       width:20%;
+    }
+}
+
+.messages{
+    width: 108%;
+      text-align: center;
+      margin-left: -8%;
+      margin-bottom: 5%;
+}
