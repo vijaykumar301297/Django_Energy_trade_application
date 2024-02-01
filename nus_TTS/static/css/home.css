@@ -1,7 +1,6 @@
 {% load static %}
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -13,14 +12,14 @@ html {
 }
 
 body{
-    font-family: 'Roboto Condensed', sans-serif;
-    /* font-family: 'Lato', sans-serif; */
-    /* font-family: 'Ubuntu', sans-serif; */
-    /* font-family: 'Roboto Slab', serif; */
+    font-family: 'Roboto', sans-serif;
     width: 100%;
 }
 
-.container {
+/* Sidebar end */
+
+
+.sidebarContainer {
     width:100%;
     height:auto;
     background-color:#F9FBFD;
@@ -29,7 +28,7 @@ body{
 }
 
 .sidebarContent {
-    width:250px;
+    width:25rem;
     border-right: 4px solid #E0E8F3;
     height:100vh;
     overflow:hidden;
@@ -40,16 +39,16 @@ body{
   width:100%
 }
 
-.logo {
+.nlogo {
     display: block;
     width: 60%;
-    padding-top:30px;
+    padding-top:3rem;
     margin-left: auto;
     margin-right:auto;
 }
 
 .sectionLinks {
-    margin-top:60px;
+    margin-top:6rem;
     width:100%;
 }
 
@@ -58,12 +57,12 @@ body{
 }
 
 .item {
-    padding:8px 30px;
+    padding:1rem 3rem;
 }
 
-a {
+.nav-link, a {
     font-size:1.6rem;
-    font-weight:600;
+    font-weight:500;
     text-decoration:none;
     display:block;
 }
@@ -93,52 +92,42 @@ a {
      background-image: url( '../img/home-icon.svg');
      background-repeat: no-repeat;
      background-position: left;
-     padding: 9px 0 9px 25px;
-
+     padding: 1rem 0 1rem 2.5rem;
 }
 
 .company{
      background-image: url( '../img/add-company-icon.svg');
      background-repeat: no-repeat;
      background-position: left;
-     padding: 9px 0 9px 25px;
-
+     padding: 1rem 0 1rem 2.5rem;
 }
-
-
 
 .trade{
      background-image: url( '../img/entertrade-icon.svg');
     background-repeat: no-repeat;
      background-position: left;
-     padding: 9px 0 9px 25px;
-
+    padding: 1rem 0 1rem 2.5rem;
 }
 
 .report{
      background-image: url( '../img/generate-report-icon.svg');
      background-repeat: no-repeat;
      background-position: left;
-     padding: 9px 0 9px 25px;
-
+     padding: 1rem 0 1rem 2.5rem;
 }
-
-
 
 .contract{
      background-image: url( '../img/add-supply-contract-icon.svg');
      background-repeat: no-repeat;
      background-position: left;
-     padding: 9px 0 9px 25px;
-
+     padding: 1rem 0 1rem 2.5rem;
 }
 
 .userData{
      background-image: url( '../img/usermanagement-icon.svg');
      background-repeat: no-repeat;
      background-position: left;
-     padding: 9px 0 9px 25px;
-
+     padding: 1rem 0 1rem 2.5rem;
 }
 
 .logOut {
@@ -148,24 +137,29 @@ a {
     bottom:0%;
     border-top: 2px solid skyblue;
     padding: 1rem 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+
 }
 
 .logoutBtn{
      background-image: url( '../img/logout-icon.svg');
      background-repeat: no-repeat;
      background-position: left;
-     padding: 9px 0 9px 15px;
+     padding: 1rem 0 1rem 1.5rem;
 }
 
 .logOut a {
     display:block;
     text-decoration:none;
-    margin: 0 0 0 51px;
-
+    margin-left:  5.1rem;
+    color:#345DA6;
 }
+/* Sidebar end */
 
+/* indexpage starts */
 .contentData {
-    width : 1286px;
+    width : 128.6rem;
     position:relative;
 }
 
@@ -191,10 +185,813 @@ a {
     line-height: 1.7;
 }
 .returnHome{
-    margin:10px 0;
+    margin:1rem 0;
     font-size:1.5rem;
     font-weight:700;
     color:#345DA6;
 }
 
+/* indexpage ends */
 
+/* Usermangement starts */
+
+
+.content {
+    height: 20vh;
+    margin-left: 20%;
+}
+.user_block{
+    width:85%;
+
+    margin-right:auto;
+
+}
+.btn_block {
+    position: absolute;
+    right: 3%;
+    top: 5%;
+}
+
+.btn_add {
+    font-size:1.6rem;
+    padding: 1rem 2rem;
+    background-color:#1A73E8;
+    color: white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.fas {
+    font-size:1.2rem;
+    color:white;
+    margin-top:1px;
+ }
+
+.nav_bar {
+   position: absolute;
+  top: 10%;
+
+}
+.nav_list {
+     display:flex;
+     list-style:none;
+}
+
+.nav_items {
+    padding:1rem 2rem;
+}
+
+.act {
+    background-color: #E0E8F3;
+    color:black !important;
+    border-bottom:3px solid black;
+}
+
+/* admin starts */
+
+.table {
+    margin: 5rem 0 0 35rem;
+    border: 1px solid skyblue;
+    width: 70%;
+}
+
+#myTable {
+    width:100%;
+}
+
+#myInput {
+    width:100%;
+    height: 4rem;
+    padding: 0 1rem;
+    border:1px solid skyblue;
+    margin:0;
+}
+
+.header th, td{
+    border: 1px solid skyblue;
+}
+
+th, td {
+    font-size:1.4rem;
+}
+
+.header  {
+    height:5rem;
+}
+td {
+    padding: 0 4rem;
+    height: 5rem;
+    text-align: left;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    padding:1rem 2rem;
+    border: 1px solid skyblue;
+}
+
+button {
+    padding: 5px 10px;
+    background: white;
+    border: 1px solid;
+    cursor:pointer;
+}
+
+.div_link {
+    display:none;
+}
+.btn_click {
+    list-style:none;
+    padding: 10px 20px;
+    border: 1px solid;
+}
+
+.btn_data {
+    display:none;
+}
+
+.btn_list {
+    list-style:none;
+    padding: 6px;
+    border: 1px solid;
+}
+.btn_item {
+    margin-bottom:10px;
+}
+.btn_hover {
+     background-color: #551A8B;
+     color: white;
+     padding: 10px 12px;
+     font-size: 16px;
+     border: none;
+     outline: none;
+     border-radius:5px;
+}
+.dropdown {
+    display: inline;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 1.6rem;
+    z-index: 1;
+    box-shadow: 0px 0px 4px black;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.dropdown-content a:hover {
+    background-color: skyblue;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.btn:hover, .dropdown:hover .btn {
+    background-color: #0b7dda;
+}
+
+/* usermodify start */
+
+.editcontainer {
+    position: relative;
+    height: 100vh;
+    background: #f9fbfd;
+}
+.editwrapper {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 42rem;
+    padding: 2rem;
+}
+.editcontent {
+    box-shadow: 0 0 10px #a23e3e;
+    padding: 1.5rem;
+}
+
+.contentheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 2rem;
+    border-bottom: 1px solid;
+    padding: 1rem 0;
+}
+.edit_primary_heading, label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color:#345DA6;
+}
+
+a {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #345DA6;
+}
+
+.contentbody {
+    width: 80%;
+    margin:2rem auto;
+}
+label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 1rem;
+    color: #345DA6;
+}
+input, select {
+    width: 100%;
+    padding: 7px 0 7px 10px;
+    background-color: #F9FBFD;
+    border: none;
+    border: 1px solid #1363F1;
+    border-radius: 5px;
+    color: #345DA6;
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    }
+
+.content_submit {
+    border-top: 1px solid;
+    margin: 1rem 2rem;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn_submit{
+    background: #345DA6 !important;
+    color: white !important;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.cancel-btn {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #1363F1;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* usermanagement ends */
+
+/* trade starts */
+
+.tradecontainer {
+    position: relative;
+    background-color: #F9FBFD;
+}
+
+.tradewrapper {
+    position: absolute;
+    left: 8%;
+    width: 60%;
+
+}
+
+.primary_heading--block {
+    display: block;
+    color: #345DA6;
+    margin: 1rem 0.5rem;
+    font-size: 1rem;
+    font-weight: 900;
+    margin-top:5%;
+}
+
+
+.heading_secondary--block {
+    display: block;
+    color: #345DA6;
+    margin: 1rem 0.5rem;
+    border-bottom: 1px solid #3456ad;
+    padding: 1rem 0;
+}
+
+.heading_secondary--block {
+    font-size:1.6rem;
+}
+
+.secondary_heading--main {
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.form_block {
+    width: 95%;
+    margin-left: 1rem;
+}
+
+.parent_block, .client_block,.contract_block,
+.calendar_block{
+    color: #345DA6;
+    margin: 1rem 0.5rem;
+}
+
+.select_parent, .select_client, .select_contract, .select_contracts,
+.select_contact_year, .select_month, input, .btn, .select_years {
+    width: 100%;
+    padding: 10px 0 10px 10px;
+    background-color: #F9FBFD;
+    border: none;
+    border: 1px solid #1363F1;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    color: #345DA6;
+    margin-top:0 !important;
+}
+
+.tradePeriod--block {
+    display: flex;
+    justify-content: space-between;
+    align-items: first baseline;
+    margin-bottom: 4rem;
+}
+
+.trade_period-left {
+    width: 75%;
+    margin-left: 5px;
+}
+.trade_period-right {
+    width: 20%;
+    margin-right: 8rem;
+    display: none;
+}
+
+.heading {
+    margin-bottom: 2rem;
+}
+.select_contact_year {
+    padding: 1.3rem 2rem !important;
+}
+.span_select {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-top:3rem;
+}
+
+span {
+    padding: 1.5rem 2rem;
+    margin-right: 1rem;
+    background-color: #fff;
+    border: none;
+    border: 1px solid #1363F1;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #345DA6;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.span_select-q {
+    display: none;
+}
+.qHeading {
+    margin-bottom: 2rem;
+}
+.quarters {
+    display: flex;
+}
+
+.span_slect_month {
+    display: none;
+}
+
+.price_block {
+    max-width:67.2rem;
+    margin-bottom: 13rem;
+    margin-left: 6px;
+}
+
+.a {
+    width: calc((100% - 0rem)/2);
+    float: left;
+}
+
+.a input {
+    width: 80% !important;
+}
+.sumbit_block {
+    margin-top: 4rem;
+    border-top: 1px solid #3456ad;
+  padding: 2rem 0;
+}
+.btn{
+    background: #345DA6 !important;
+  color: white !important;
+}
+
+.contract_blocks {
+    display: flex;
+    justify-content: start;
+    gap: 15rem;
+    margin-left: 1rem;
+}
+
+.select_contract {
+    width:170%;
+}
+
+#select_contract1{
+    width:200%;
+}
+
+.submit-block {
+    margin-top: 2rem;
+    border-top: 1px solid #3456ad;
+    padding: 2rem 0;
+}
+
+.years_block {
+    margin-left:5px;
+}
+
+/*trade ends*/
+
+
+.md {
+margin: -1rem 0;
+}
+/* ends */
+
+/*Supp;y */
+
+.supply {
+   width:60%;
+   margin:0 5rem;
+}
+
+.inside_block {
+    width: 90%;
+  margin: 0 auto;
+}
+
+.tab {
+    display: none;
+}
+
+
+.parent, .client, .commodity, .units,
+.supplier, .currency, .contracts, .index, .calendar_name, .commodity_label,
+.divide_consumption, .allocate_consumption, .Allowable_trade--heading {
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 1rem;
+    color: #345DA6;
+}
+
+.select_parent, .select_client, .supplier_input,
+.select_currency, .select_index, .date, .commodity_input,
+.Consumption_input, .select_price_mechanism, .clicks_heading, .clicks_entry {
+    width: 100%;
+    padding: 10px 0 10px 10px;
+    background-color: #F9FBFD;
+    border: none;
+    border: 1px solid #1363F1;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    color: #345DA6;
+}
+
+.currency_block {
+ margin-bottom:1rem;
+}
+
+.contract_type {
+    margin-bottom:0.5rem;
+}
+
+.commodity_block, .contract_type_block {
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+.span_btn {
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+.span_btn .active,.btn_fixin .active  {
+    background-color: #fff !important;
+    border: 1px solid #1363F1 !important;
+}
+
+
+.btns, .allow_click {
+    padding: 1.5rem 2rem;
+    margin-right: 1rem;
+    background-color: #fff;
+    border: none;
+    border: 1px solid #1363F1;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #345DA6;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.mwh_btn {
+    margin-top: 2rem;
+}
+
+.supplier_block {
+    margin-top: 2rem;
+}
+
+.select_indexvalue {
+    width: 26rem;
+    padding: 1.3rem 4rem 1.3rem 1rem;
+}
+
+.btn--block {
+    padding: 2rem 0 2rem 0;
+    border-top: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.btn_close {
+    padding: 1rem 2rem;
+    margin: 0 3rem;
+}
+
+.btn_continue {
+    background-color: #345DA6;
+    color: white;
+    padding: 1rem 2rem;
+    margin: 0 3rem;
+}
+
+.gas, .indexed {
+    display: none;
+}
+
+.btn_fixin {
+    margin: 3rem 2rem 2rem 0;
+}
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.step.finish {
+    background-color: #04AA6D;
+}
+
+.calendar{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.date {
+    border-radius: 0;
+}
+
+.divdate {
+    padding: 13.5px 9.5px 11px 9.5px;
+  border: 1px solid;
+}
+
+
+.mwhin {
+    /* padding: 13px 9.5px 11px 9.5px; */
+    padding:13.4px 9.5px 10.5px 9.5px;
+    border: 1px solid #1363F1;
+    border-radius:0;
+}
+
+.cons_pow_span {
+    margin-top:3rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 6.5rem;
+    height: 2.8rem;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 3.4rem;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+.Consumption_price_block, .calendar_yearly {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.commodity_input {
+    width: 100%;
+}
+
+.total_consumption {
+    width: 60%;
+}
+
+.Consumption_input {
+    width: 80%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.allocate {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+    align-items: center;
+    margin-top: 3%;
+
+}
+
+.allocate_consumption {
+    margin-right: 1rem;
+}
+
+.divide_block {
+    display: none;
+}
+
+.toggle_divide {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.divide_consumption {
+    margin-right: 1rem;
+}
+
+.cons_pow {
+    padding: 1rem 0 2rem 0;
+}
+
+
+.allowable_trade_block {
+    padding: 0.5rem 0 2rem 0;
+}
+.trade_name {
+    margin-bottom: 2rem;
+}
+
+.allow_click {
+    color: black;
+}
+
+.trade_add_block {
+    padding: 1rem 0;
+    display: none;
+}
+
+.consumption_click {
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    color: #345DA6;
+    margin: 0 1rem;
+}
+
+.clicks_heading {
+    width: 100%;
+    text-align: start;
+    padding: 1rem;
+}
+
+.input_clicks {
+    margin-top: -3%;
+}
+
+.clicks_entry {
+    text-align: end;
+}
+
+.clicks_secondary_heading {
+    display: block;
+    text-align: end;
+    margin-right: 1rem;
+}
+
+.material-icons {
+    padding: 10px;
+    border: 1px solid #1363F1;
+    border-radius: 50%;
+    font-size: 20px;
+
+}
+
+.select_val{
+    width: 25%;
+}
+
+.consum_per {
+    margin-right: 1rem;
+}
+
+.del span {
+    cursor: pointer;
+}
+
+
+.e-input-group-icon ,.e-date-icon, .e-icons{
+    display: none !important;
+}
+
+
+#element1, #element:focus {
+    border:none !important;
+}
+
+
+
+
+/*Supp;y */

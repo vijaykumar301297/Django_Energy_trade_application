@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+{% block title %}Enter Trade{% endblock %}
+{% block content %}
+
+
+    <div class="tradecontainer">
+        <div class="tradewrapper">
+            <div class="primary_heading--block">
+                <h2 class="primary_heading">
+                    Generate Report
+                </h2>
+            </div>
+            <div class="heading_secondary--block">
+                <h3>
+                    New Report
+                </h3>
+            </div>
+            <form action="" method="post">
+                <div class="form_block">
+                    <div class="report_block">
+                        <label class="parent">Report Type</label>
+                        <select name="" id="" class="select_parent">
+                            <option value="">Select Report Type</option>
+                            <option value="">Trade History Report</option>
+                            <option value="">Contract Exposure Report</option>
+                        </select>
+                    </div>
+                    <div class="parent_block">
+                        <label class="parent">Parent</label>
+                        <select name="" id="" class="select_parent">
+                            <option value="">Please select Parent</option>
+                        </select>
+                    </div>
+                    <div class="client_block">
+                        <label class="client">Client</label>
+                        <select name="" id="" class="select_client">
+                            <option value="">Please Select client</option>
+                        </select>
+                    </div>
+                    <div class="contract_blocks">
+                        <div class="ind c">
+                            <label class="contract_name">Indexed Contract</label>
+                            <select name="" id="" class="select_contract">
+                                <option value="">Select Indexed Contract</option>
+                            </select>
+                        </div>
+
+                        <div class="fixed c">
+                            <label class="contract_name">Fixed Contract</label>
+                            <select name="" id="select_contract1" class="select_contract">
+                                <option value="">Select fixed Contract</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="years_block">
+                        <label for="">Select Years</label>
+                        <select name="" id="" class="select_years">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+
+                </div>
+                <div class="submit-block">
+                        <button class="btn">Generate Report</button>
+                    </div>
+            </form>
+
+        </div>
+    </div>
+
+    {% endblock %}

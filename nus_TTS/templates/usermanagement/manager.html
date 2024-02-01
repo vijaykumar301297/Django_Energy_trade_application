@@ -1,64 +1,24 @@
 
 {% include 'usermanagement/usermanagement.html' %}
 
-<style>
-    .table {
-        margin: 5rem 0 0 35rem;
-        border: 1px solid skyblue;
-        width: 70%;
-    }
-
-    #myTable {
-        width:100%;
-    }
-    #myInput {
-        width:100%;
-        height: 4rem;
-        padding: 0 1rem;
-        border:1px solid skyblue;
-    }
-
-    .header th, td{
-        border: 1px solid skyblue;
-    }
-
-    th, td {
-        font-size:1.4rem;
-    }
-
-      .header  {
-        height:5rem;
-
-    }
-    td {
-       padding: 0 4rem;
-        height: 5rem;
-    }
-
-
-    .pagination {
-        display: flex;
-        justify-content: space-between;
-        padding:1rem 2rem;
-        border: 1px solid skyblue;
-    }
-
-</style>
-
 <div class="table" >
     <table id="myTable" >
         <input type="text" id="myInput" onkeyup="myFunction()"
                placeholder="Search" title="Type in a name">
         <thead>
             <tr class="header">
+                <th>id</th>
                 <th>Username</th>
                 <th>Email</th>
                 <th>Account Status</th>
+                <td></td>
+
             </tr>
         </thead>
         <tbody>
          {% for i in datas %}
             <tr>
+                <td>{{i.id}}</td>
                 <td>{{i.username}}</td>
                 <td>{{i.email}}</td>
                 {% if i.Account_status == 'Invited'%}
@@ -66,13 +26,25 @@
                 {% else %}
                     <td ><span style="padding:4px 10px; Background-color:whitesmoke;">{{i.account_status}}</span></td>
                 {% endif %}
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn_hover" style="border-left:1px solid #0d8bf2">
+                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="{% url 'usermanagement/edituser' %}">Edit User</a>
+                                <a href="{% url 'usermanagement/moveuser' %}">Move User</a>
+                                <a href="{% url 'usermanagement/disableuser' %}">Disable User</a>
+                             </div>
+                            </div>
+
+                    </td>
             </tr>
          {% endfor %}
         </tbody>
       </table>
     <div class="pagination">
         {% if datas.has_previous %}
-        <a href="?page=1">&laquo; first</a>
             <a href="?page={{ datas.previous_page_number }}">&#8592; previous</a>
         {% endif %}
 
@@ -85,14 +57,12 @@
 
 <script>
 function myFunction() {
-  // Declare variables
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
 
-  // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
     if (td) {
@@ -106,3 +76,5 @@ function myFunction() {
   }
 }
 </script>
+
+

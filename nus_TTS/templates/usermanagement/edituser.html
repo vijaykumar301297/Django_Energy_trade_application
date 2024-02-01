@@ -1,0 +1,47 @@
+{% load static %}
+<link rel="stylesheet" type="text/css"  href="{% static 'css/home.css' %}">
+
+    <div class="editcontainer">
+        <div class="editwrapper">
+            <form action="" method="post">
+                <div class="editcontent">
+                    <div class="contentheader">
+                        <div class="heading">
+                            <h3 class="edit_primary_heading">
+                                Edit User
+                            </h3>
+                        </div>
+                        <div class="close_btn">
+                            <a href="">X</a>
+                        </div>
+                    </div>
+                    <div class="contentbody">
+                        <div class="userblock">
+                            <label for="">Username</label>
+                            <input type="text" class="username">
+                        </div>
+                        <div class="email_block">
+                            <label for="">Email Id</label>
+                            <input type="email" class="email">
+                        </div>
+                        <div class="email_block">
+                            <label for="">Role</label>
+                            <select name="" id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="content_submit">
+                        <div class="cancel_btn ">
+                            <button class="cancel-btn btn">Cancel</button>
+                        </div>
+                        <div class="submit_btn">
+                            <button class="btn_submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

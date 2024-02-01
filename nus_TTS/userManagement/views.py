@@ -92,7 +92,7 @@ def user_page(request):
     data = Parent.objects.all()
     if request.method == 'POST':
         username = request.POST['username']
-        password =request.POST['password']
+        password = request.POST['password']
         email = request.POST['email']
         role = request.POST['role']
         parent_role = request.POST['parent_role']
@@ -107,7 +107,8 @@ def user_page(request):
             return redirect('usermanagement/Invite_user')
 
         if role == "Admin" or role == "Manager" or role == "User":
-            myuser = Account(username=username, password=password, email=email, role=role, parent_role="", client_role="")
+            myuser = Account(username=username, password=password, email=email, role=role, parent_role="",
+                             client_role="")
         elif role == "parent_company":
             myuser = Account(username=username, password=password, email=email, role=role, parent_role=parent_role,
                              client_role="")
@@ -177,3 +178,21 @@ def addclientcompany(request):
     data = Parent.objects.all()
     return render(request, 'usermanagement/userdata.html', {'data': data})
     # return render(request,'addParent/addclientcompany.html',)
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@login_required(login_url='login')
+def edituser(request):
+    return render(request, 'usermanagement/edituser.html')
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@login_required(login_url='login')
+def moveuser(request):
+    return render(request, 'usermanagement/moveuser.html')
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@login_required(login_url='login')
+def disableuser(request):
+    return render(request, 'usermanagement/disableuser.html')

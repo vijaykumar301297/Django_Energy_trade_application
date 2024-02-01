@@ -16,5 +16,8 @@ urlpatterns = [
     path('usermanagement/client', views.client, name='usermanagement/client'),
     # path('usermanagement/parentdata', views.addclientcompany, name='usermanagement/parentdata'),
     path('activate/<uidb64>/<token>', views.activate, name='activate'),
+    path('usermanagement/edituser', views.edituser, name ='usermanagement/edituser'),
+    path('usermanagement/disableuser', views.disableuser, name ='usermanagement/disableuser'),
+    path('usermanagement/moveuser', views.moveuser, name ='usermanagement/moveuser'),
     # path('home', views.home_page, name='home')W
 ]

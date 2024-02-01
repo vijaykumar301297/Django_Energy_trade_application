@@ -1,0 +1,359 @@
+{% extends 'index.html' %}
+{% block title %}Enter Trade{% endblock %}
+{% block content %}
+
+
+<body>
+    <div class="container">
+        <div class="wrapper supply">
+            <div class="primary_heading--block">
+                <h2 class="primary_heading">
+                    New Supply contract
+                </h2>
+            </div>
+            <form action="" method="post" id = "createContract">
+                <div class="tab">
+                    <div class="heading_secondary--block">
+                        <h1 class="secondary_heading--main">
+                            Contract details
+                        </h1>
+                    </div>
+                    <div class="inside_block">
+
+                        <div class="parent_block">
+                            <label class="parent">Parent</label>
+                            <select name="" id="" class="select_parent">
+                                <option value="">Please select Parent</option>
+                            </select>
+                        </div>
+                        <div class="client_block">
+                            <label class="client">Client</label>
+                            <select name="" id="" class="select_client">
+                                <option value="">Please Select client</option>
+                            </select>
+                        </div>
+                        <div class="commodity_block">
+                            <div class="elec_gas">
+                                <div class="label1">
+                                    <label for="" class="commodity">Commodity</label>
+                                </div>
+                                <div class="span_btn">
+                                    <span class="btns btn_elec" value="Electricity">
+                                        <img src="electricity-hover.svg" alt=""> Electricity
+                                    </span>
+                                    <span class="btns btn_gas" value="Natural gas">
+                                        <img src="naturalgas.svg" alt="">Natural Gas</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="unit gas">
+                                <div class="label1">
+                                    <label for="" class="units">Units</label>
+                                </div>
+                                <div class="mwh_btn">
+                                    <span class="btns btn_MWh">MWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="supplier_block">
+                            <label class="supplier">Supplier</label>
+                        <input type="text" class="supplier_input">
+                        </div>
+
+                        <div class="currency_block">
+                            <label for="" class="currency">Currency</label>
+                            <select name="" id="" class="select_currency">
+                                <option value="">Please Select currency</option>
+                            </select>
+                        </div>
+                        <div class="contract_type_block">
+                            <div class="contract_type">
+                                <div class="label1">
+                                    <label class="contracts">Contract Type</label>
+                                </div>
+                                <div class="btn_fixin">
+                                    <span class="btns btn_fixed" value ="Fixed">Fixed</span>
+                                    <span class="btns btn_index">Indexed</span>
+                                </div>
+                            </div>
+                            <div class="btn__index--block indexed">
+                                <div class="label1">
+                                    <label for="" class="index">Index</label>
+                                </div>
+                                <div class="">
+                                    <select name="" id="" class="select_indexvalue">
+                                        <option value="">Please Select index type</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab" id ="contractterm">
+                    <div class="heading_secondary--block">
+                        <h2 class="secondary_heading--main fi">
+                            Term and Consumption - Indexed Contract
+                        </h2>
+                    </div>
+                    <div class="inside_block">
+
+                        <div class="calendar_block">
+                            <div class="calendar_name">
+                                <label for="">Contract Term (DD/MM/YYYY)</label>
+                            </div>
+                            <div class="calendar">
+                                <input type="date" class="date">
+
+                                <div class="divdate">to</div>
+                                <input type="date" class="date">
+                            </div>
+                        </div>
+
+                        <div class="Consumption_price_block">
+                            <div class="total_consumption">
+                                <label for="" class="commodity_label">Total Anuual Consumption (per MWh)</label>
+                                <input type="text" placeholder="0.00" class="Consumption_input"><span class="mwhin" value="">MWH</span>
+                            </div>
+                           <div class="allocate">
+                                <label for="" class="allocate_consumption">Allocate Consumption per month</label>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                  </label>
+                            </div>
+                        </div>
+                        <div class="divide_block">
+                            <div class="toggle_divide">
+                                <label for="" class="divide_consumption">Divide Equality between months</label>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="total_consumptions">
+                            <div class="heading">
+                                <h3>Total Annual Consumption</h3>
+                            </div>
+                            <div class="toal_price">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab" id="remove">
+                    <div class="main">
+                        <div class="heading_secondary--block">
+                            <h2 class="secondary_heading--main">
+                                Index Details
+                            </h2>
+                        </div>
+                        <div class="inside_block">
+                            <div class="structure_block">
+                                <div class="cons_pow">
+                                    <div class="label1">
+                                        <label for="" class="index_type">Index Structure Type</label>
+                                    </div>
+                                    <div class="cons_pow_span">
+                                        <span class="btns btn_consum" value="Consumption">
+                                            Consumption (MWH)
+                                        </span>
+                                        <span class="btns btn_power" value="Power">
+                                            Power(MW)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="allowable_trade_block">
+                                    <div class="trade_name">
+                                        <h4 class="Allowable_trade--heading">
+                                            Allowable trade periods
+                                        </h4>
+                                    </div>
+                                    <div class="allow_span_clivk">
+                                        <span class="allow_click">
+                                            +  Add allowable trade period
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="trade_add_block">
+                                    <div class="consumption_click">
+                                        <div class="calendar-yearly">
+                                            <div class="calendar_yearly">
+                                                <div class="select_val">
+                                                    <select name="" id="" class="clicks_heading">
+                                                        <option value="Calendar Yearly">Calendar Yearly</option>
+                                                        <option value="Calendar Quarterly">Calendar Quarterly</option>
+                                                        <option value="Calendar Monthly">Calendar Monthly</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="input_clicks">
+                                                    <label for="" class="clicks_secondary_heading">Clicks / tranches</label>
+                                                    <input type="number" class="clicks_entry">
+                                                </div>
+                                                <div class="del">
+                                                    <i class="material-icons">delete</i>
+                                                </div>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for=""><input type="checkbox" name="" id="consum_per" > % Consumption</label>
+                                              <label><input type="checkbox" name="" id="consum_mwh" > #MWhs</label>
+                                            </div>
+                                        </div>
+                                        <div class="calendar-Quarterly" style="display: none;">
+                                            <div class="calendar_Quarterly">
+                                                <div class="select_val">
+                                                    <select name="" id="" class="clicks_heading">
+                                                        <option value="Calendar Yearly">Calendar Yearly</option>
+                                                        <option value="Calendar Quarterly">Calendar Quarterly</option>
+                                                        <option value="Calendar Monthly">Calendar Monthly</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="input_clicks">
+                                                    <label for="" class="clicks_secondary_heading">Clicks / tranches</label>
+                                                    <input type="number" class="clicks_entry">
+                                                </div>
+                                                <div class="del">
+                                                    <span><i class="material-icons">delete</i></span>
+                                                </div>
+                                            </div>
+                                            <div class="checkbox">
+                                                <span class="consum_per"><input type="checkbox" name="" id="consum_per" > % Consumption</span>
+                                                <span class="consum_mwh"><input type="checkbox" name="" id="consum_mwh" > #MWhs</span>
+                                            </div>
+                                        </div>
+                                        <div class="calendar-Monthly" style="display: none;">
+                                            <div class="calendar_Monthly">
+                                                <div class="select_val">
+                                                    <select name="" id="" class="clicks_heading">
+                                                        <option value="Calendar Yearly">Calendar Yearly</option>
+                                                        <option value="Calendar Quarterly">Calendar Quarterly</option>
+                                                        <option value="Calendar Monthly">Calendar Monthly</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="input_clicks">
+                                                    <label for="" class="clicks_secondary_heading">Clicks / tranches</label>
+                                                    <input type="number" class="clicks_entry">
+                                                </div>
+                                                <div class="del">
+                                                    <span><i class="material-icons">delete</i></span>
+                                                </div>
+                                            </div>
+                                            <div class="checkbox">
+                                                <span class="consum_per"><input type="checkbox" name="" id="consum_per" > % Consumption</span>
+                                                <span class="consum_mwh"><input type="checkbox" name="" id="consum_mwh" > #MWhs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="postion_block">
+                                <div class="label1">
+                                    <label for="" class="index">Open Position pricing mechanism</label>
+                                </div>
+                                <div class="">
+                                    <select name="" id="" class="select_price_mechanism">
+                                        <option value="">Please Select Pricing Mechanism</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab">
+
+                    <div class="heading_secondary--block">
+                        <h2 class="secondary_heading--main">
+                            Term
+                        </h2>
+                    </div>
+                    <div class="inside_block">
+
+                        <div class="parent_block">
+                            <label class="parent">Parent</label>
+                            <select name="" id="" class="select_parent">
+                                <option value="">Please select Parent</option>
+                            </select>
+                        </div>
+                        <div class="client_block">
+                            <label class="client">Client</label>
+                            <select name="" id="" class="select_client">
+                                <option value="">Please Select client</option>
+                            </select>
+                        </div>
+                        <div class="commodity_block">
+                            <div class="elec_gas">
+                                <div class="label1">
+                                    <label for="" class="commodity">Commodity</label>
+                                </div>
+                                <div class="span_btn">
+                                    <span class="btns btn_elec" value="Electricity">
+                                        <img src="electricity-hover.svg" alt=""> Electricity
+                                    </span>
+                                    <span class="btns btn_gas" value="Natural gas">
+                                        <img src="naturalgas.svg" alt="">Natural Gas</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="unit gas">
+                                <div class="label1">
+                                    <label for="" class="units">Units</label>
+                                </div>
+                                <div class="mwh_btn">
+                                    <span class="btns btn_MWh">MWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="supplier_block">
+                            <label class="supplier">Supplier</label>
+                        <input type="text" class="supplier_input">
+                        </div>
+
+                        <div class="currency_block">
+                            <label for="" class="currency">Currency</label>
+                            <select name="" id="" class="select_currency">
+                                <option value="">Please Select currency</option>
+                            </select>
+                        </div>
+                        <div class="contract_type_block">
+                            <div class="contract_type">
+                                <div class="label1">
+                                    <label class="contracts">Contract Type</label>
+                                </div>
+                                <div class="btn_fixin">
+                                    <span class="btns btn_fixed">Fixed</span>
+                                    <span class="btns btn_index">Indexed</span>
+                                </div>
+                            </div>
+                            <div class="btn__index--block indexed">
+                                <div class="label1">
+                                    <label for="" class="index">Index</label>
+                                </div>
+                                <div class="">
+                                    <select name="" id="" class="select_index">
+                                        <option value="">Please Select index type</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn--block">
+                    <button type="button"  class="btns btn_close" id="prevBtn" onclick="nextPrev(-1)">&larr; Previous</button>
+                    <button type="button"  class="btns btn_continue"  id="nextBtn" onclick="nextPrev(1)">Next &rarr;</button>
+                  </div>
+
+                <div style="text-align:center;margin-top:40px;display:none">
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+       {% endblock %}

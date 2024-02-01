@@ -1,63 +1,6 @@
 
 {% include 'addparent/addParent.html' %}
 
-<style>
-    .table {
-        margin: 5rem 0 0 35rem;
-        border: 1px solid skyblue;
-        width: 70%;
-    }
-
-    #myTable {
-        width:100%;
-    }
-    #myInput {
-        width:100%;
-        height: 4rem;
-        padding: 0 1rem;
-        border:1px solid skyblue;
-    }
-
-    .header th, td{
-        border: 1px solid skyblue;
-    }
-
-    th, td {
-        font-size:1.4rem;
-    }
-
-    .header  {
-        height:5rem;
-
-    }
-    td {
-       padding: 0 4rem;
-        height: 5rem;
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: space-between;
-        padding:1rem 2rem;
-        border: 1px solid skyblue;
-    }
-
-    button {
-       padding: 5px 10px;
-       background: white;
-       border: 1px solid;
-       cursor:pointer;
-    }
-    .div_link {
-       display:none;
-    }
-    .btn_click {
-        list-style:none;
-      padding: 10px 20px;
-      border: 1px solid;
-    }
-</style>
-
 <div class="table" >
     <table id="myTable" >
         <input type="text" id="myInput" onkeyup="myFunction()"
@@ -65,23 +8,25 @@
         <thead>
             <tr class="header">
                 <th>Parent Company</th>
-<!--                <th>Email</th>-->
-<!--                <th>Account Status</th>-->
+                <th>State</th>
                 <td></td>
             </tr>
         </thead>
         <tbody>
-         {% for i in data %}
-    <tr>
+            {% for i in data %}
+            <tr>
                 <td>{{i.parent}}</td>
-<!--                <td>{{i.email}}</td>-->
-<!--                {% if i.Account_status == 'Invited'%}-->
-<!--                    <td ><span style="padding:4px 10px; Background-color:yellow;">{{i.Account_status}}</span></td>-->
-<!--                {% else %}-->
-<!--                    <td ><span style="padding:4px 10px; Background-color:whitesmoke;">{{i.Account_status}}</span></td>-->
-<!--                {% endif %}-->
-<!--                <td>{{i.parent}}</td>-->
-                <td></td>
+                <td>Active</td>
+                <td class="btn_c">
+                    <div class="dropdown md">
+                        <button class="btn_hover" style="border-left:1px solid #0d8bf2">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">Edit Client</a>
+                        </div>
+                    </div>
+                </td>
 
             </tr>
          {% endfor %}

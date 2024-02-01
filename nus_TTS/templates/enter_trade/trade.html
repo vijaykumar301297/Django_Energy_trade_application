@@ -1,0 +1,121 @@
+
+{% extends 'index.html' %}
+{% block title %}Enter Trade{% endblock %}
+{% block content %}
+
+    <div class="tradecontainer">
+        <div class="tradewrapper">
+            <div class="primary_heading--block">
+                <h2 class="primary_heading">
+                    Trade Entry
+                </h2>
+            </div>
+            <div class="heading_secondary--block">
+                <h3>
+                    New Trade Details
+                </h3>
+            </div>
+            <form action="" method="post">
+                <div class="form_block">
+                    <div class="parent_block">
+                        <label class="parent">Parent</label>
+                        <select name="" id="" class="select_parent">
+                            <option value="">Please select Parent</option>
+                        </select>
+                    </div>
+                    <div class="client_block">
+                        <label class="client">Client</label>
+                        <select name="" id="" class="select_client">
+                            <option value="">Please Select client</option>
+                        </select>
+                    </div>
+                    <div class="contract_block">
+                        <label class="contract_name">Contract</label>
+                        <select name="" id="" class="select_contracts">
+                            <option value="">Please Select Contract</option>
+                        </select>
+                    </div>
+                    <div class="calendar_block">
+                        <label for="" class="ted">Trade Execution date</label>
+                        <input type="date" name="" id="" class ="input">
+                    </div>
+                    <div class="tradePeriod--block">
+                        <div class="trade_period-left">
+                            <div class="heading">
+                                <label class="tertiary_heading">
+                                    Trade Period
+                                </label>
+                            </div>
+                            <div class="span_select">
+                                <div class="year_block">
+                                    <span class="year span" >
+                                        Calendar Year
+                                    </span>
+                                </div>
+                                <div class="quarter_block">
+                                    <span class="quarter span">
+                                        Calendar Quarters
+                                    </span>
+                                </div>
+                                <div class="month_block">
+                                    <span class="month span">
+                                        Calendar Monthly
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="trade_period-right">
+                            <label for="">Year</label>
+                            <select name="" id="" class="select_contact_year">
+                                <option value=""></option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="span_select-q">
+                        <div class="qHeading">
+                            <label>Quaters</label>
+                        </div>
+                        <div class="quarters">
+                            <div class="q1">
+                                <span class="q1 span">Q1</span>
+                            </div>
+                            <div class="q2">
+                                <span class="q2 span">Q2</span>
+                            </div>
+                            <div class="q3">
+                                <span class="q3 span">Q3</span>
+                            </div>
+                            <div class="q4">
+                                <span class="q4 span">Q4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span_slect_month">
+                        <label for="">Select Month</label>
+                        <select name="" id="" class="select_month">
+                            <option value=""Select Month></option>
+                        </select>
+
+                    </div>
+                    <div class="price_block">
+                        <div class="baseload a">
+                            <label for="">BaseLoad Price</label>
+                            <input type="text" class ="input">
+                        </div>
+                        <div class="effectiv a">
+                            <label for="">Effective Price</label>
+                            <input type="text" class ="input">
+                        </div>
+                    </div>
+                </div>
+                    <div class="sumbit_block">
+                        <button class="btn">Enter Trade</button>
+                    </div>
+
+            </form>
+
+        </div>
+    </div>
+    {% endblock %}

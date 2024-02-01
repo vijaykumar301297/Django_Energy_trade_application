@@ -1,63 +1,6 @@
 
 {% include 'addparent/addParent.html' %}
 
-<style>
-    .table {
-        margin: 5rem 0 0 35rem;
-        border: 1px solid skyblue;
-        width: 70%;
-    }
-
-    #myTable {
-        width:100%;
-    }
-    #myInput {
-        width:100%;
-        height: 4rem;
-        padding: 0 1rem;
-        border:1px solid skyblue;
-    }
-
-    .header th, td{
-        border: 1px solid skyblue;
-    }
-
-    th, td {
-        font-size:1.4rem;
-    }
-
-    .header  {
-        height:5rem;
-
-    }
-    td {
-       padding: 0 4rem;
-        height: 5rem;
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: space-between;
-        padding:1rem 2rem;
-        border: 1px solid skyblue;
-    }
-
-    button {
-       padding: 5px 10px;
-       background: white;
-       border: 1px solid;
-       cursor:pointer;
-    }
-    .div_link {
-       display:none;
-    }
-    .btn_click {
-        list-style:none;
-      padding: 10px 20px;
-      border: 1px solid;
-    }
-</style>
-
 <div class="table" >
     <table id="myTable" >
         <input type="text" id="myInput" onkeyup="myFunction()"
@@ -67,6 +10,7 @@
                 <th>Parent Company</th>
                 <th>Client Company</th>
                 <th>Country</th>
+                <th>State</th>
                 <td></td>
             </tr>
         </thead>
@@ -76,7 +20,18 @@
             <td>{{i.parent_company}}</td>
             <td>{{i.client}}</td>
             <td>{{i.country}}</td>
-            <td></td>
+            <td>Active</td>
+             <td class="btn_c">
+                 <div class="dropdown">
+                     <button class="btn_hover" style="border-left:1px solid #0d8bf2">
+                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                     </button>
+                     <div class="dropdown-content">
+                         <a href="#">Edit Parent</a>
+
+                     </div>
+                 </div>
+             </td>
             </tr>
     {%endfor%}
         </tbody>
