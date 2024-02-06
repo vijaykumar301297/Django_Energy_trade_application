@@ -10,7 +10,7 @@
 
                     <li class="item"><a href="" class="home nav-link" >Home</a></li>
                     <li class="item {% if navbar == 'parent' %} active {% endif %}"><a href="{%  url 'createcompany/parent' %}" class="company nav-link">Add Company</a></li>
-                    <li class="item {% if navbar == 'supply' %} active {% endif %}"><a href="{% url 'supplycontract/createcontract' %}" class="contract nav-link" >Supply Contract</a></li>
+                    <li class="item {% if navbar == 'supply' %} active {% endif %}"><a href="" class="contract nav-link" >Supply Contract</a></li>
                     <li class="item {% if navbar == 'enter_trade' %} active {% endif %}"><a href="{% url 'enter_trade' %}" class="trade nav-link" >Enter Trade</a></li>
                     <li class="item {% if navbar == 'generate' %} active {% endif %}"><a href="{% url 'generate_report' %}" class="report nav-link" >Generate Report</a></li>
                     <li class="item {% if navbar == 'admin' %} active {% endif %}"><a href="{%  url 'usermanagement/admin' %}" class="userData nav-link">User Management</a></li>
