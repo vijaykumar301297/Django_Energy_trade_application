@@ -56,43 +56,6 @@ def user_login(request):
     return render(request, 'loginpage\login.html')
 
 
-# @ensure_csrf_cookie
-# @cache_control(no_cache=True, must_revalidate=True, no_store=True)
-# def reset_password(request):
-#
-#     if request.method == 'POST':
-#         email = request.POST['email']
-#
-#         data = Account.objects.all().filter(email=email)
-#
-#         if Account.objects.all().filter(email=email).exists():
-#
-#             current_site = get_current_site(request)
-#             email_subject = "Reset Your Mail"
-#             message2 = render_to_string('usermanagement/mail.html', {
-#
-#                 'name': data.username,
-#                 'domain': current_site.domain,
-#                 'uid': urlsafe_base64_encode(force_bytes(myuser.pk)),
-#                 'token': account_activation_token.make_token(myuser)
-#             })
-#
-#             email = EmailMessage(
-#                 email_subject,
-#                 message2,
-#                 settings.EMAIL_HOST,
-#                 [email],
-#             )
-#             email.fail_silently = True
-#             email.send()
-#
-#         else:
-#             messages.error(request, 'Username Already available, Kindly proceed with login')
-#
-#
-#     return render(request, 'loginpage\passwordreset.html')
-
-
 def logout_user(request):
     logout(request)
     return redirect('login')
