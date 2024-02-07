@@ -4,7 +4,7 @@
     <div class="editcontainer">
         <div class="editwrapper">
             <form action="" method="post">
-                {% csrf_token %}
+                     {% csrf_token %}
                 <div class="editcontent">
                     <div class="contentheader">
                         <div class="heading">
@@ -19,18 +19,20 @@
                     <div class="contentbody">
                         <div class="email_block">
                             <label for="">Email Id</label>
-                            <input type="email" class="email">
+                            <input type="email" class="email" value="{{user.email}}" readonly>
                         </div>
                         <div class="email_block">
                             <label for="">Role</label>
-                            <select name="" id="">
-                                <option value=""></option>
-                            </select>
+                                <select name="role" id="">
+                                    <option value="Admin">Admin</option>
+                                     <option value="Manager">Manager</option>
+                                    <option value="NUS User">NUS User</option>
+                                </select>
                         </div>
                     </div>
                     <div class="content_submit">
                         <div class="cancel_btn ">
-                            <button class="cancel-btn btn">Cancel</button>
+                            <a class="cancel-btn btn" href="{% url 'usermanagement/admin' %}">Cancel</a>
                         </div>
                         <div class="submit_btn">
                             <button class="btn_submit">Submit</button>
@@ -40,5 +42,3 @@
             </form>
         </div>
     </div>
-</body>
-</html>

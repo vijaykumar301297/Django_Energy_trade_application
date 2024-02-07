@@ -73,7 +73,7 @@ def addclientcompany(request):
             client_data = Client(parent_company=parent_company, client=client, country=country, parent_data_id=datas.id)
 
         client_data.save()
-        return redirect(createcompany)
+        return redirect(parent)
 
     else:
         return render(request, 'addParent/addclientcompany.html', {'data': data})

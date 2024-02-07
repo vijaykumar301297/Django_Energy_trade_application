@@ -32,9 +32,9 @@
                                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                             </button>
                             <div class="dropdown-content">
-                                <a href="{% url 'usermanagement/edituser' %}">Edit User</a>
-                                <a href="{% url 'usermanagement/moveuser' %}">Move User</a>
-                                <a href="{% url 'usermanagement/disableuser' %}">Disable User</a>
+                                <a href="{% url 'usermanagement/edituser' i.id %}">Edit User</a>
+                                <a href="{% url 'usermanagement/moveuser' i.id %}">Move User</a>
+                                <a href="{% url 'usermanagement/disableuser' i.id %}">Disable User</a>
                              </div>
                             </div>
 

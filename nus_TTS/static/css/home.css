@@ -177,6 +177,7 @@ body{
     font-size:1.6rem;
     Font-weight:600;
     line-height: 1.7;
+    border:none !important;
 }
 .para {
     font-size:1.4rem;
@@ -386,7 +387,7 @@ button {
 .contentheader{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /*align-items: center;*/
     margin: 1rem 2rem;
     border-bottom: 1px solid;
     padding: 1rem 0;
@@ -455,6 +456,8 @@ input, select {
     border: 1px solid #1363F1;
     font-size: 1.3rem;
     font-weight: 500;
+    padding: 10px 26px !important;
+    margin-bottom:0 !important;
 }
 
 /* usermanagement ends */

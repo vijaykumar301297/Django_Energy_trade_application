@@ -1,33 +1,19 @@
 {% autoescape off %}
 
-Confirm your e-mail
-<div class="table">
- <table>
-   <tbody>
-   <tr>
-     <td><img class="logo" src="/static/img/nusLogo.svg" alt="NUS Consulting Logo"></td>
-    </tr>
-   <tr>
+    Hello {{ name }},
 
-     <td>Hello {{ name }}!!</td>
-    </tr>
-    <tr>
+        You have been set up a new user of NUS Consulting Group's TTS System.
 
-     <td>Hello {{ name }}!!</td>
-    </tr>
-   <tr>
-    <td></td>
-   </tr>
-   </tbody>
- </table>
-</div>
-Hello {{ name }}!!
+        Please click the button below to confirm your e-mail address and complete the creation of your account.
 
-You have been set up a new user of NUS Consulting Group's TTS System.
-Please click the button below to confirm your e-mail address and complete the creation of your account.
+        Please confirm your email by clicking on the following link.
 
-Please confirm your email by clicking on the following link.
+        Your username - {{name}} and password ={{password}} and role ={{role}}
 
-Confirmation Link: http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+        Confirmation Link: http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
 
- {% endautoescape %}
+        Note:
+
+        The password is dummy kindly reset your password.
+
+{% endautoescape %}

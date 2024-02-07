@@ -95,7 +95,7 @@ p label {
   transition: all .3s ease;
   padding: 0 15px
 }
-}
+
 .mailSection input:focus{
   border-color: 1px solid #1363F1;
 }

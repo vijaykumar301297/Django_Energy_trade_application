@@ -1,49 +1,6 @@
 
 {% include 'usermanagement/usermanagement.html' %}
 
-<style>
-    .table {
-        margin: 5rem 0 0 35rem;
-        border: 1px solid skyblue;
-        width: 70%;
-    }
-
-    #myTable {
-        width:100%;
-    }
-    #myInput {
-        width:100%;
-        height: 4rem;
-        padding: 0 1rem;
-        border:1px solid skyblue;
-    }
-
-    .header th, td{
-        border: 1px solid skyblue;
-    }
-
-    th, td {
-        font-size:1.4rem;
-    }
-
-     .header  {
-        height:5rem;
-
-    }
-    td {
-       padding: 0 4rem;
-        height: 5rem;
-    }
-
-
-    .pagination {
-        display: flex;
-        justify-content: space-between;
-        padding:1rem 2rem;
-        border: 1px solid skyblue;
-    }
-</style>
-
 <div class="table" >
     <table id="myTable" >
         <input type="text" id="myInput" onkeyup="myFunction()"
@@ -59,18 +16,32 @@
             </tr>
         </thead>
         <tbody>
-         {% for i in datas %}
+
+         {% for i in data %}
             <tr>
                 <td>{{i.username}}</td>
                 <td>{{i.email}}</td>
-                <td>{{i.parent_role}}</td>
+                <td>{% for pc in pc %}{{i.parent_role}}</td>
                 <td>{{i.client_role}}</td>
                 {% if i.Account_status == 'Invited'%}
                     <td ><span style="padding:4px 10px; Background-color:yellow;">{{i.account_status}}</span></td>
                 {% else %}
                     <td ><span style="padding:4px 10px; Background-color:whitesmoke;">{{i.account_status}}</span></td>
                 {% endif %}
-                <td></td>
+                 <td>
+                        <div class="dropdown">
+                            <button class="btn_hover" style="border-left:1px solid #0d8bf2">
+                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="{% url 'usermanagement/edituser' i.id %}">Edit User</a>
+                                <a href="{% url 'usermanagement/moveuser' i.id %}">Move User</a>
+                                <a href="{% url 'usermanagement/disableuser' i.id %}">Disable User</a>
+
+                             </div>
+                        </div>
+
+                    </td>
             </tr>
          {% endfor %}
         </tbody>
