@@ -13,4 +13,4 @@ Energy Trade Tracking Platform and still in progress.
 
 Note: 
 
-    It is still in under development 
+    It is still under development 
