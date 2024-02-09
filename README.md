@@ -1,7 +1,7 @@
 Energy Trade Tracking Platform and still in progress.
 
     This web application was in the development state and used the Django framework, HTML, CSS, Js, AJAX for the front end, and PostgreSQL to store data.
-    This project was developed in PHP, but my motive was to build it in Django. I am working day by day to make progress.
+    This project was developed previously in PHP, but my motive was to build it in Django. I am working day by day to make progress.
     
     Features of this project or web application:
     
