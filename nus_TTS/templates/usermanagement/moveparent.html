@@ -1,0 +1,199 @@
+<!--{% load static %}-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--   <title>NUS FRS TTS SYSTEM | Add user</title>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">-->
+<!--    <link rel="icon" href="{% static 'img/logo.png' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'css/user.css' %}">-->
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>-->
+
+<!--    <script src="https://unpkg.com/htmx.org@1.9.2"></script>-->
+<!--   <script src="{% static 'js/filter.js' %}" defer ></script>-->
+<!--   <script src="{% static 'ajax/get_client.js' %}" defer ></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        <div class="wrapper">-->
+<!--            <div class="primary_heading&#45;&#45;block">-->
+<!--                <h2 class="primary_heading">-->
+<!--                    <span class="primary_heading&#45;&#45;main">-->
+<!--                        Edit Parent User-->
+<!--                    </span>-->
+<!--                    <span class="close" onclick='window.history.go(-1);' >&times;</span>-->
+<!--                </h2>-->
+<!--            </div>-->
+
+<!--            <form id="regForm" method="post" action="" >-->
+<!--                {% csrf_token %}-->
+<!--                <hr>-->
+<!--                <div class="tab">-->
+<!--                       {% if messages %}-->
+<!--                            <ul class="messages">-->
+<!--                                {% for message in messages %}-->
+<!--                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>-->
+<!--                                {% endfor %}-->
+<!--                            </ul>-->
+<!--                            {% endif %}-->
+
+
+<!--                    <div class="input_text&#45;&#45;block">-->
+<!--                        <label class="email">Email</label>-->
+<!--                        <input type="email" class="input_email" name ="email" value="{{user.email}}">-->
+<!--                    </div>-->
+<!--                    <div class="select&#45;&#45;block">-->
+<!--                        <label class="role">Role</label>-->
+<!--                        <select id="role" name="role">-->
+<!--                            <option value="Select" disabled>Select Role</option>-->
+<!--                            <option value="Parent" class="parent_company">Parent User</option>-->
+<!--                            <option value="Client" class="client_company">Client User</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                    <div class="select_parent&#45;&#45;block" >-->
+<!--                        <label class="email">Parent Company</label>-->
+<!--                        <select id="" name="parent_role">-->
+<!--                            <option value="">Select Parent</option>-->
+<!--                            <option value="{{user.parent_role_id}}">{{user.parent_role.parent}}</option>-->
+<!--                             {% for i in parent %}-->
+<!--                            <option value="{{i.id}}">{{i.parent}}</option>-->
+
+<!--                            {% endfor %}-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                    <div class="select_client&#45;&#45;block" style="display: none;">-->
+<!--                        <div class="parent">-->
+<!--                            <label class="email">Parent Company</label>-->
+<!--                            <select id="parent_data" name="parent_role">-->
+<!--                                <option>Select Parent</option>-->
+
+<!--                               {% for i in parent %}-->
+
+<!--                            <option value="{{i.pk}}" >-->
+<!--                                {{i.parent}}-->
+<!--                            </option>-->
+<!--                            {% endfor %}-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                        <div class="client">-->
+<!--                            <label class="email">Client Company</label>-->
+<!--                            <select id="client" name = "client_role">-->
+<!--                                <option value="">Select Client</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--                <hr>-->
+<!--                <div class="btn&#45;&#45;block">-->
+<!--                    <a href="" class="btn btn_cancel" onclick='window.history.go(-1);'>Cancel</a>-->
+<!--                    <button type="submit" class="btn btn_create">Sign In</button>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</body>-->
+
+<!--</html>-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>NUS FRS TTS SYSTEM | Add user</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="icon" href="{% static 'img/logo.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<!--    <script src="https://unpkg.com/htmx.org@1.9.2"></script>-->
+
+   <script src="{% static 'js/filter.js' %}" defer ></script>
+   <script src="{% static 'ajax/get_client.js' %}" defer ></script>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="primary_heading--block">
+                <h2 class="primary_heading">
+                    <span class="primary_heading--main">
+                        Add User
+                    </span>
+                    <span class="close" onclick='window.history.go(-1);' >&times;</span>
+                </h2>
+            </div>
+
+            <form id="regForm" method="post" action="" >
+                {% csrf_token %}
+                <hr>
+                <div class="tab">
+                       {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+
+
+
+                    <div class="input_text--block">
+                        <label class="email">Email</label>
+                        <input type="email" class="input_email" name ="email" value="{{user.email}}" readonly>
+                    </div>
+                    <div class="select--block">
+                        <label class="role">Role</label>
+                        <select id="role" name="role">
+<!--                            <option value="" >Select Role</option>-->
+<!--                            <option value="Admin">Admin</option>-->
+<!--                            <option value="Manager">Manager</option>-->
+<!--                            <option value="User">User</option>-->
+                            <option value="Parent" class="parent_company">Parent User</option>
+                            <option value="Client" class="client_company">Client User</option>
+                        </select>
+                    </div>
+                    <div class="select_parent--block" >
+                        <label class="email">Parent Company</label>
+                        <select id="p1" name="parent_role" >
+                            <option value="{{user.parent_role_id}}">{{user.parent_role.parent}}</option>-->
+                            {% for i in parent %}
+                            <option value="{{i.id}}">{{i.parent}}</option>
+
+                           {% endfor %}
+                        </select>
+                    </div>
+                    <div class="select_client--block" style="display: none;">
+                        <div class="parent">
+                            <label class="email">Parent Company</label>
+                            <select id="parent_data" name="parent_role" >
+                                <option>Select</option>
+                                <option value="{{user.parent_role_id}}">{{user.parent_role.parent}}</option>-->
+
+                            </select>
+                        </div>
+                        <div class="client">
+                            <label class="email">Client Company</label>
+                            <select id="clients" name = "client_role">
+                                <option value="{{user.client_role_id}}">{{user.client_role.client}}</option>-->
+                                {% for i in parent %}
+                                <option value="{{i.client}}">{{i.parent}}</option>
+
+                               {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="btn--block">
+                    <a href="{% url 'usermanagement/parent' %}" class="btn btn_cancel">Cancel</a>
+                    <button type="submit" class="btn btn_create">Edit Parent</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

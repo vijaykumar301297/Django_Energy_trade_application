@@ -13,17 +13,17 @@
             </tr>
         </thead>
         <tbody>
-            {% for i in data %}
+            {% for i in datas %}
             <tr>
                 <td>{{i.parent}}</td>
-                <td>Active</td>
+                <td>{{i.state}}</td>
                 <td class="btn_c">
                     <div class="dropdown md">
                         <button class="btn_hover" style="border-left:1px solid #0d8bf2">
                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#">Edit Client</a>
+                            <a href="{% url 'createcompany/edit-parent' i.id  %}">Edit Parent</a>
                         </div>
                     </div>
                 </td>
@@ -32,15 +32,15 @@
          {% endfor %}
         </tbody>
       </table>
-<!--    <div class="pagination">-->
-<!--        {% if datas.has_previous %}-->
-<!--            <a href="?page={{ datas.previous_page_number }}">&#8592; previous</a>-->
-<!--        {% endif %}-->
+    <div class="pagination">
+        {% if datas.has_previous %}
+            <a href="?page={{ datas.previous_page_number }}">&#8592; previous</a>
+        {% endif %}
 
-<!--        {% if datas.has_next %}-->
-<!--            <a href="?page={{ datas.next_page_number }}" class="left">next &#8594;</a>-->
-<!--        {% endif %}-->
-<!--    </div>-->
+        {% if datas.has_next %}
+            <a href="?page={{ datas.next_page_number }}" class="left">next &#8594;</a>
+        {% endif %}
+    </div>
 
 </div>
 

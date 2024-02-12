@@ -7,13 +7,12 @@
             </div>
             <div class="sectionLinks">
                 <ul class="list">
-
                     <li class="item"><a href="" class="home nav-link" >Home</a></li>
-                    <li class="item {% if navbar == 'parent' %} active {% endif %}"><a href="{%  url 'createcompany/parent' %}" class="company nav-link">Add Company</a></li>
+                    <li class="item {% if navbar == 'parent' or navbar == 'client'   %} active {% endif %}" value=""><a href="{%  url 'createcompany/parent' %}" class="company nav-link">Add Company</a></li>
                     <li class="item {% if navbar == 'supply' %} active {% endif %}"><a href="" class="contract nav-link" >Supply Contract</a></li>
                     <li class="item {% if navbar == 'enter_trade' %} active {% endif %}"><a href="{% url 'enter_trade' %}" class="trade nav-link" >Enter Trade</a></li>
                     <li class="item {% if navbar == 'generate' %} active {% endif %}"><a href="{% url 'generate_report' %}" class="report nav-link" >Generate Report</a></li>
-                    <li class="item {% if navbar == 'admin' %} active {% endif %}"><a href="{%  url 'usermanagement/admin' %}" class="userData nav-link">User Management</a></li>
+                    <li class="item {% if navbar == 'admin' or navbar == 'manager' or navbar == 'user' or navbar == 'parent_user' or navbar == 'client_user' or navbar == 'inactive' %} active {% endif %}"><a href="{%  url 'usermanagement/admin' %}" class="userData nav-link">User Management</a></li>
                 </ul>
             </div>
 

@@ -11,42 +11,44 @@
                 <th>Client Company</th>
                 <th>Country</th>
                 <th>State</th>
-                <td></td>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-     {% for i in data %}
-        <tr>
-            <td>{{i.parent_company}}</td>
-            <td>{{i.client}}</td>
-            <td>{{i.country}}</td>
-            <td>Active</td>
-             <td class="btn_c">
-                 <div class="dropdown">
-                     <button class="btn_hover" style="border-left:1px solid #0d8bf2">
-                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                     </button>
-                     <div class="dropdown-content">
-                         <a href="#">Edit Parent</a>
 
+
+        <tr>
+            {% for i in datas %}
+                <td>{{i.parent_data.parent}}</td>
+                <td>{{i.client}}</td>
+                <td>{{i.country}}</td>
+                <td>{{i.state}}</td>
+                 <td class="btn_c">
+                     <div class="dropdown">
+                         <button class="btn_hover" style="border-left:1px solid #0d8bf2">
+                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                         </button>
+                         <div class="dropdown-content">
+                             <a href="{% url 'createcompany/edit-client' i.id %}">Edit CLient</a>
+
+                         </div>
                      </div>
-                 </div>
-             </td>
-            </tr>
-    {%endfor%}
+                 </td>
+                </tr>
+        {%endfor%}
         </tbody>
       </table>
-<!--    <div class="pagination">-->
-<!--        {% if datas.has_previous %}-->
-<!--            <a href="?page={{ datas.previous_page_number }}">&#8592; previous</a>-->
-<!--        {% endif %}-->
+        <div class="pagination">
+            {% if datas.has_previous %}
+                <a href="?page={{ datas.previous_page_number }}">&#8592; previous</a>
+            {% endif %}
 
-<!--        {% if datas.has_next %}-->
-<!--            <a href="?page={{ datas.next_page_number }}" class="left">next &#8594;</a>-->
-<!--        {% endif %}-->
-<!--    </div>-->
+            {% if datas.has_next %}
+                <a href="?page={{ datas.next_page_number }}" class="left">next &#8594;</a>
+            {% endif %}
+        </div>
+    </div>
 
-</div>
 
 <script>
 function myFunction() {

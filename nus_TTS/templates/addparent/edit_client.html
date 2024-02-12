@@ -13,9 +13,9 @@
             <div class="primary_heading--block">
                 <h2 class="primary_heading">
                     <span class="primary_heading--main">
-                        Add Client
+                        Add Parent
                     </span>
-                    <a class="close" href="{% url 'createcompany/client' %}" >&times;</a>
+                    <span class="close" onclick='window.history.go(-1);' >&times;</span>
                 </h2>
             </div>
 
@@ -26,23 +26,19 @@
                        {% if messages %}
                             <ul class="messages1">
                                 {% for message in messages %}
-                                {{c}}
-                                {{d}}
-                                {{p}}
                                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
                                 {% endfor %}
                             </ul>
                             {% endif %}
                     <div class="input_text--block">
                         <label class="username">Client name</label>
-                        <input type="text" class="input_user" name ="client" placeholder="Enter Client Company">
+                        <input type="text" class="input_user" name ="client" placeholder="Enter Client Company" value="{{client_data.client}}">
                     </div>
                     <div class="input_text--block">
                         <label class="username">Parent name</label>
                         <select name="parent_company" id="">
                             <option value="">Select Parent</option>
-
-                            {% for i in data %}
+                            {% for i in parent_data %}
                             <option value="{{i.id}}" >
                                 {{i.parent}}
                             </option>
@@ -58,8 +54,8 @@
                 </div>
                 <hr>
                 <div class="btn--block">
-                    <a href="{% url 'createcompany/client' %}" class="btn btn_cancel" >Cancel</a>
-                    <button type="submit" class="btn btn_create">Create Client</button>
+                    <a href="{% url 'createcompany/client' %}" class="btn btn_cancel">Cancel</a>
+                    <button type="submit" class="btn btn_create">Edit Client</button>
                 </div>
             </form>
         </div>

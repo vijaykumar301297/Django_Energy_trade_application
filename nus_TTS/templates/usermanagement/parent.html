@@ -21,7 +21,7 @@
             <tr>
                 <td>{{i.username}}</td>
                 <td>{{i.email}}</td>
-                <td>{{i.parent_role}}</td>
+                <td>{{i.parent_role.parent}}</td>
                 {% if i.Account_status == 'Invited'%}
                     <td ><span style="padding:4px 10px; Background-color:yellow;">{{i.account_status}}</span></td>
                 {% else %}
@@ -33,8 +33,8 @@
                                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                             </button>
                             <div class="dropdown-content">
-                                <a href="{% url 'usermanagement/editparentuser' i.id %}">Edit User</a>
-                                <a href="{% url 'usermanagement/moveuser' i.id %}">Move User</a>
+                                <a href="{% url 'usermanagement/edituser' i.id %}">Edit User</a>
+                                <a href="{% url 'usermanagement/moveparentuser' i.id %}">Move User</a>
                                 <a href="{% url 'usermanagement/disableuser' i.id %}">Disable User</a>
 
                              </div>
@@ -57,26 +57,3 @@
 
 </div>
 
-<script>
-function myFunction() {
-  // Declare variables
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-</script>

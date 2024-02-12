@@ -21,8 +21,8 @@
             <tr>
                 <td>{{i.username}}</td>
                 <td>{{i.email}}</td>
-                <td>{% for pc in pc %}{{i.parent_role}}</td>
-                <td>{{i.client_role}}</td>
+                <td>{{i.client_role.parent_data}}</td>
+                <td>{{i.client_role.client}}</td>
                 {% if i.Account_status == 'Invited'%}
                     <td ><span style="padding:4px 10px; Background-color:yellow;">{{i.account_status}}</span></td>
                 {% else %}
@@ -35,7 +35,7 @@
                             </button>
                             <div class="dropdown-content">
                                 <a href="{% url 'usermanagement/edituser' i.id %}">Edit User</a>
-                                <a href="{% url 'usermanagement/moveuser' i.id %}">Move User</a>
+                                <a href="{% url 'usermanagement/moveclient' i.id %}">Move User</a>
                                 <a href="{% url 'usermanagement/disableuser' i.id %}">Disable User</a>
 
                              </div>
@@ -58,25 +58,3 @@
 
 </div>
 
-<script>
-function myFunction() {
-
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-</script>

@@ -9,9 +9,9 @@
     <link rel="icon" href="{% static 'img/logo.png' %}" />
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<!--    <script src="https://unpkg.com/htmx.org@1.9.2"></script>-->
 
-    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-<!--   <script src="{% static 'js/active.js' %}" defer ></script>-->
+   <script src="{% static 'js/filter.js' %}" defer ></script>
    <script src="{% static 'ajax/get_client.js' %}" defer ></script>
 </head>
 <body>
@@ -50,7 +50,7 @@
                     <div class="select--block">
                         <label class="role">Role</label>
                         <select id="role" name="role">
-                            <option value="Select" disabled>Select Role</option>
+                            <option value="" >Select Role</option>
                             <option value="Admin">Admin</option>
                             <option value="Manager">Manager</option>
                             <option value="User">User</option>
@@ -60,8 +60,8 @@
                     </div>
                     <div class="select_parent--block" style="display: none;">
                         <label class="email">Parent Company</label>
-                        <select id="" name="parent_role">
-                            <option value="C">Select Parent</option>
+                        <select id="p1" name="parent_role" >
+                            <option value="" >Select Parent</option>
                              {% for i in data %}
 
                             <option value="{{i.pk}}" >
@@ -73,10 +73,9 @@
                     <div class="select_client--block" style="display: none;">
                         <div class="parent">
                             <label class="email">Parent Company</label>
-                            <select id="parent_data" name="parent_role">
-                                <option>Select Parent</option>
+                            <select id="parent_data" name="parent_role" >
+                                <option value="" >Select Parent</option>
                                {% for i in data %}
-
                             <option value="{{i.pk}}" >
                                 {{i.parent}}
                             </option>
@@ -85,7 +84,7 @@
                         </div>
                         <div class="client">
                             <label class="email">Client Company</label>
-                            <select id="client" name = "client_role">
+                            <select id="clients" name = "client_role[]" multiple>
                                 <option value="">Select Client</option>
                             </select>
                         </div>
@@ -100,29 +99,12 @@
                 <hr>
                 <div class="btn--block">
                     <a href="" class="btn btn_cancel" onclick='window.history.go(-1);'>Cancel</a>
-                    <button type="submit" class="btn btn_create">Sign In</button>
+                    <button type="submit" class="btn btn_create">Create User</button>
                 </div>
             </form>
         </div>
     </div>
 
 </body>
-<script>
-    const roleValue = document.querySelector('#role');
-console.log(roleValue);
-roleValue.addEventListener('change', function(e) {
-    if(e.target.value ==='Parent') {
-        document.querySelector('.select_parent--block').style.display='block';
-        document.querySelector('.select_client--block').style.display='none';
-    }
-   else if(e.target.value==='Client') {
-       document.querySelector('.select_client--block').style.display='block';
-       document.querySelector('.select_parent--block').style.display='none';
-   }
-   else {
-       document.querySelector('.select_client--block').style.display='none';
-       document.querySelector('.select_parent--block').style.display='none';
-   }
-});
-</script>
+
 </html>

@@ -59,6 +59,12 @@ body {
 .close {
     float: right;
     cursor: pointer;
+   text-decoration: none !important;
+
+}
+
+a {
+text-decoration: none !important;
 }
 
 .heading_secondary--block {

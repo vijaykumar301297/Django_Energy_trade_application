@@ -9,12 +9,14 @@ $("#parent_data").change(function () {
             'parentId': parentId,
             'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val(),
         },
+//        console.log(data);
         success: function (data) {
             let html_data = '<option value="">Select Client</option>';
             data.forEach(function (data) {
+            console.log(data);
                 html_data += `<option value="${data.id}">${data.client}</option>`
             });
-            $("#client").html(html_data);
+            $("#clients").html(html_data);
         }
     });
 });

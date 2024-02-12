@@ -16,7 +16,8 @@ urlpatterns = [
     path('usermanagement/disableuser/<id>', views.disableuser, name ='usermanagement/disableuser'),
     path('usermanagement/moveuser/<id>', views.moveuser, name ='usermanagement/moveuser'),
     path('usermanagement/activeuser/<id>', views.activeuser, name ='usermanagement/activeuser'),
-    path('usermanagement/editparentuser/<id>', views.editparentuser, name ='usermanagement/editparentuser'),
+    path('usermanagement/moveparentuser/<id>', views.moveparentuser, name ='usermanagement/moveparentuser'),
+    path('usermanagement/move-client/<id>', views.moveclientuser, name ='usermanagement/moveclient'),
 
 
     # path('home', views.home_page, name='home')W

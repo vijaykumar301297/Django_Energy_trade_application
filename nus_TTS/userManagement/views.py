@@ -68,7 +68,7 @@ def parent(request):
     datas = p.get_page(page)
     # datas = Paginator.page(page)
     
-    return render(request, 'userManagement/parent.html', {'data': data, 'datas': datas, 'navbar': 'parent'})
+    return render(request, 'userManagement/parent.html', {'data': data, 'datas': datas, 'navbar': 'parent_user'})
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
@@ -79,7 +79,8 @@ def client(request):
     page = request.GET.get("page", 1)
     datas = p.get_page(page)
     pc = Client.objects.all()
-    return render(request, 'userManagement/client.html', { 'data':data, 'datas': datas, 'navbar': 'client', 'pc':pc})
+    return render(request, 'userManagement/client.html',
+                  {'data': data, 'datas': datas, 'navbar': 'client_user', 'pc': pc})
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
@@ -98,7 +99,9 @@ def inactive_users(request):
 @login_required(login_url='login')
 def user_page(request):
     parent_data = Parent.objects.all()
+    client_data = Client.objects.all()
     if request.method == 'POST':
+        print(request.POST)
         username = request.POST['username']
         password = request.POST['password']
         email = request.POST['email']
@@ -116,16 +119,19 @@ def user_page(request):
         
         if role == "Admin" or role == "Manager" or role == "User":
             myuser = Account(username=username, password=password, email=email, account_status='Invited', role=role,
-                             parent_role="",
-                             client_role="")
-        elif role == "parent_company":
-            myuser = Account(username=username, password=password, email=email, account_status='Invited', role=role,
-                             parent_role=parent_role,
-                             client_role="")
-        else:
+                             parent_role_id="", client_role_id="")
+        
+        elif role == "Parent":
+            parent_data = Parent.objects.get(id=parent_role)
             myuser = Account(username=username, password="", email=email, account_status='Invited', role=role,
-                             parent_role=parent_role,
-                             client_role=client_role)
+                             parent_role_id=parent_data.id,
+                             client_role_id="")
+        else:
+            parent_data = Parent.objects.get(id=parent_role)
+            client_datas = Client.objects.get(id=client_role)
+            myuser = Account(username=username, password="", email=email, account_status='Invited', role=role,
+                             parent_role_id=parent_data.id,
+                             client_role_id=client_datas.id)
         
         myuser.set_password(password)
         myuser.is_active = False
@@ -152,22 +158,21 @@ def user_page(request):
         
         return redirect('usermanagement/admin')
     
-    else:
-        return render(request, 'usermanagement/userdata.html', {'data': parent_data})
+    return render(request, 'usermanagement/userdata.html', {'data': parent_data, 'client': client_data})
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required(login_url='login')
 def client_data(request):
+    # parent = Parent.objects.all(id = 'parentId')
     if request.method == "POST":
         parentId = request.POST['parentId']
         try:
-            subject = Parent.objects.filter(id=parentId).first()
-            topics = Client.objects.filter(parent_data_id=parentId)
+            parent = Parent.objects.filter(id=parentId).first()
+            client = Client.objects.filter(parent_data_id=parentId)
         except Exception:
-            data['error_message'] = 'error'
-            return JsonResponse(data)
-        return JsonResponse(list(topics.values('id', 'client')), safe=False)
+           return HttpResponse('No Data found')
+        return JsonResponse(list(client.values('id', 'client')), safe=False)
 
 
 def activate_user(request, uidb64, token):
@@ -207,7 +212,6 @@ def edituser(request, id):
     
     if request.method == 'POST':
         user.username = request.POST['username']
-        user.role = request.POST['role']
         # email = email
         user.save()
         
@@ -272,18 +276,51 @@ def activeuser(request, id):
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required(login_url='login')
-def editparentuser(request, id):
+def moveparentuser(request, id):
+    print(id)
     user = Account.objects.get(pk=id)
+    parent = Parent.objects.all().exclude(parent=user.parent_role.parent)
+    client = Client.objects.all().filter(parent_data_id=user.parent_role.id)
     context = {
         'user': user,
+        'parent': parent,
+        'client': client
     }
-    
+    #
     if request.method == 'POST':
-        user.username = request.POST['username']
+        user.email = request.POST['email']
         user.role = request.POST['role']
+        user.parent_role_id = request.POST['parent_role']
+        user.client_role_id = request.POST['client_role']
         # email = email
         user.save()
-        
+
         return redirect('usermanagement/admin')
-    
-    return render(request, 'usermanagement/edituser.html', context)
+
+    return render(request, 'usermanagement/moveparent.html', context)
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@login_required(login_url='login')
+def moveclientuser(request, id):
+    print(id)
+    user = Account.objects.get(pk=id)
+    parent = Parent.objects.all().exclude(parent=user.parent_role.parent)
+    client = Client.objects.all().filter(parent_data_id=user.parent_role.id)
+    context = {
+        'user': user,
+        'parent': parent,
+        'client': client
+    }
+
+    if request.method == 'POST':
+        user.email = request.POST['email']
+        user.role = request.POST['role']
+        user.parent_role_id = request.POST['parent_role']
+        user.client_role_id = request.POST['client_role']
+        # email = email
+        user.save()
+
+        return redirect('usermanagement/admin')
+
+    return render(request, 'usermanagement/moveclient.html', context)

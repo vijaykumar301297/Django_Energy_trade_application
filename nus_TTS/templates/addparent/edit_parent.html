@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Parent</title>
+    <title>Edit Parent</title>
         <link rel="icon" href="{% static 'img/logo.png' %}" />
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
 </head>
@@ -13,17 +13,17 @@
             <div class="primary_heading--block">
                 <h2 class="primary_heading">
                     <span class="primary_heading--main">
-                        Add Parent
+                        Edit Parent
                     </span>
-                    <a href="" class="close"  >&times;</a>
+                    <a class="close" href="{% url 'createcompany/parent' %}" >&times;</a>
                 </h2>
             </div>
 
-            <form id="regForm" method="post" action="" >
+            <form id="regForm" method="post" action="">
                 {% csrf_token %}
                 <hr>
                 <div class="tab">
-                       {% if messages %}
+                      {% if messages %}
                             <ul class="messages1">
                                 {% for message in messages %}
                                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
@@ -32,13 +32,13 @@
                             {% endif %}
                     <div class="input_text--block">
                         <label class="username">Parent</label>
-                        <input type="text" class="input_user" name ="parent" placeholder="Enter Parent Company">
+                        <input type="text" class="input_user" name ="parent" placeholder="Enter Parent Company" value="{{parent_data.parent}}">
                     </div>
                 </div>
                 <hr>
                 <div class="btn--block">
-                    <a href="" class="btn btn_cancel" onclick='window.history.go(-1);'>Cancel</a>
-                    <button type="submit" class="btn btn_create">Create Parent</button>
+                    <a href="{% url 'createcompany/parent' %}" class="btn btn_cancel" >Cancel</a>
+                    <button type="submit" class="btn btn_create">Edit Parent</button>
                 </div>
             </form>
         </div>

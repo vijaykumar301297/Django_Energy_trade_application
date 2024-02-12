@@ -8,3 +8,4 @@ from django.views.decorators.cache import cache_control
 @login_required(login_url='login')
 def contract(request):
     return render(request, 'contract/contract.html', {'navbar':'supply'})
+
