@@ -1,9 +1,16 @@
-# It is an energy tracking web application to track all of their domestic and international energy supply contracts, both fixed and indexed or flexible.
+Energy Trade Tracking Platform and still in progress.
 
-# The web application is **under development**, and it was developed using HTML, CSS, JS, Python, Django, and PostgresSQL to store the data.
+    This web application was in the development state and used the Django framework, HTML, CSS, Js, AJAX for the front end, and PostgreSQL to store data.
+    This project was developed previously in PHP, but my motive was to build it in Django. I am working day by day to make progress.
+    
+    Features of this project or web application:
+    
+    1. User login - Users have lo login via username and password.
+    2. User Registration - only admins have the authority or permission to create users.
+    3. Reset Password - User can reset their passwords by entering their email address and receiving a follow-up email to the respective email if, which is an inbuild django function.
+    
 
-# Completed: login page, reset password, user signup.User sign-up is developed by integrating with a custom model abstractbase user.
 
-# Until now, user data was fetched from the database, and a paginator was added. and the site having user roles like ADMIN, MANAGER, and USER.
+Note: 
 
-# Note: Forms.py and crIspy forms were not used to create forms. Forms are developed using HTML and CSS.
+    It is still under development 
